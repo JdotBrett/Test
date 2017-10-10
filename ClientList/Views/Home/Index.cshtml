@@ -1,0 +1,12 @@
+﻿@foreach (var client in ViewBag.Clients)
+{
+    <div class="col-sm-12">
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    @Html.ActionLink((string)client.ClientName, "ClientDetails", "Home", new { clientId = (int)client.ClientId }, null)
+                </div>
+            </div>
+        </div>
+    </div>
+}

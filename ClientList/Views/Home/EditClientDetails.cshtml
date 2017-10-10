@@ -1,0 +1,41 @@
+﻿@model ClientList.Models.ClientViewModel
+
+@using (Html.BeginForm("Save", "Home", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+   <fieldset>
+        <legend>Personal information:</legend>
+
+        <br />
+
+        Client Id:<br>
+        @Html.EditorFor(m => m.Client.ClientId)<br>
+        
+        Client Name:<br>
+        @Html.EditorFor(m => m.Client.ClientName)<br>
+       @Html.ValidationMessageFor(model => model.Client.ClientName)
+
+        Client Address:<br>
+        @Html.EditorFor(m => m.Client.ClientAddress)<br>
+        
+        Client Telephone No:<br>
+        @Html.EditorFor(m => m.Client.ClientTelephone)<br>
+        
+        Client Email:<br>
+        @Html.EditorFor(m => m.Client.ClientEmail)<br>
+        
+        Client Fax:<br>
+        @Html.EditorFor(m => m.Client.ClientFax)<br>
+        
+        Client Status:<br>
+        @Html.DropDownListFor(m => m.Client.StatusId, Model.Statuses)
+
+        <br />
+
+        <input type="submit" class="btn btn-success" value="Save Changes" />
+        <br />
+        <br />
+        <input type="button" value="Delete Client" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteClient", "Home", new { clientId = (int)@Model.Client.ClientId }, null)'" />
+
+    </fieldset>
+}
