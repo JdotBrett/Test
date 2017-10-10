@@ -1,0 +1,25 @@
+﻿<form>
+    <fieldset>
+        <legend>Personal information:</legend>
+        Client Id:<br>
+        <input type="number" disabled name="ClientId" value="@ViewBag.ClientDetails.ClientId"><br>
+        Client Name:<br>
+        <input type="text" disabled name="ClientName" value="@ViewBag.ClientDetails.ClientName"><br>
+        Client Address:<br>
+        <input type="text" disabled name="ClientAddress" value="@ViewBag.ClientDetails.ClientAddress"><br>
+        Client Telephone No:<br>
+        <input type="text" disabled name="ClientTelephone" value="@ViewBag.ClientDetails.ClientTelephone"><br>
+        Client Email:<br>
+        <input type="text" disabled name="ClientEmail" value="@ViewBag.ClientDetails.ClientEmail"><br>
+        Client Fax:<br>
+        <input type="text" disabled name="ClientFax" value="@ViewBag.ClientDetails.ClientFax"><br>
+        Client Status ID:<br>
+        <input type="number" disabled name="StatusId" value="@ViewBag.ClientDetails.StatusId" max="3"><br>
+        Client Status:<br>
+        <input type="text" disabled name="StatusState" value="@ViewBag.ClientDetails.Status.StatusState"><br>
+    </fieldset>
+</form>
+
+<br />
+
+<input type="button" value="Edit Client Details" onclick="location.href='@Url.Action("EditClientDetails", "Home", new { clientId = (int)ViewBag.ClientDetails.ClientId }, null)'" />

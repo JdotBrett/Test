@@ -1,0 +1,34 @@
+﻿<form action="Save" method="post">
+    <fieldset>
+        <legend>Personal information:</legend>
+
+        <br />
+
+        Client Id:<br>
+        <input type="number" name="ClientId" class="form-control" value="@ViewBag.ClientDetails.ClientId"><br>
+        Client Name:<br>
+        <input type="text" name="ClientName" class="form-control" value="@ViewBag.ClientDetails.ClientName"><br>
+        Client Address:<br>
+        <input type="text" name="ClientAddress" class="form-control" value="@ViewBag.ClientDetails.ClientAddress"><br>
+        Client Telephone No:<br>
+        <input type="text" name="ClientTelephone" class="form-control" value="@ViewBag.ClientDetails.ClientTelephone"><br>
+        Client Email:<br>
+        <input type="text" name="ClientEmail" class="form-control" value="@ViewBag.ClientDetails.ClientEmail"><br>
+        Client Fax:<br>
+        <input type="text" name="ClientFax" class="form-control" value="@ViewBag.ClientDetails.ClientFax"><br>
+        Client Status ID:<br>
+        <input type="number" name="StatusId" class="form-control" value="@ViewBag.ClientDetails.StatusId" max="3"><br>
+        Client Status:<br>
+        <input type="text" disabled name="StatusState" class="form-control" value="@ViewBag.ClientDetails.Status.StatusState"><br>
+
+        <br />
+
+        <input type="submit" class="btn btn-success" value="Save Changes" />
+
+        <br />
+        <br />
+
+        <input type="button" value="Delete Client" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteClient", "Home", new { clientId = (int)ViewBag.ClientDetails.ClientId }, null)'" />
+
+    </fieldset>
+</form>
